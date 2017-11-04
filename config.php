@@ -5,7 +5,7 @@ $APPLICATION_HOSTNAME = "video1";
 
 // define host, database name, username, and password of SQL database
 $DATABASE_IP = "127.0.0.1";
-$DATABASE_NAME = "app";
+$DATABASE_NAME = "cdc";
 $DATABASE_USERNAME = "cdc";
 $DATABASE_PASSWORD = "cdc";
 
