@@ -12,7 +12,7 @@ include 'config.php';
 include 'opendb.php';
 
 // get user data from the users table (assumes users table already exists!)
-$result = mysqli_query($conn, "SELECT * FROM users WHERE email='" . $email . "'" . " AND password=" . "'" . $password . "'");
+$result = mysqli_query($conn, "SELECT * FROM users WHERE email='" . mysqli_real_escape_string($email) . "'" . " AND password=" . "'" . mysqli_real_escape_string($password) . "'");
 
 // authenticate user
 $login = mysqli_num_rows($result) > 0;

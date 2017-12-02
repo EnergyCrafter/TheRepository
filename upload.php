@@ -57,7 +57,7 @@ if ($_FILES["video"]["error"] == UPLOAD_ERR_OK) {
 
   // generate video thumbnail
   // test with: sudo ffmpeg -i "/var/www/media/filename.mp4" -ss 00:00:04 -f image2 -s qvga "/var/www/media/filename.png"
-  shell_exec("ffmpeg -i \"$uploadDir/$filename\" -ss 00:00:04 -f image2 -s qvga \"$uploadDir/$shortname.png\"");
+  shell_exec("ffmpeg -i ".escapeshellarg("$uploadDir/$filename")." -ss 00:00:04 -f image2 -s qvga ".escapeshellarg("$uploadDir/$shortname.png"));
 
   // rename file upload to shortname
   rename("$uploadDir/$filename", "$uploadDir/$shortname.$extension");

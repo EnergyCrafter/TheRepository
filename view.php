@@ -111,17 +111,17 @@ try {
      <hr class="featurette-divider">
      <center>
      <?php if($clip): ?>
-     <h1><?php echo $title ?></h1>
-     <video src="<?php echo "http://$host$media/$clip" ?>" width="640" height="390" class="mejs-player" data-mejsoptions='{"alwaysShowControls": true}'></video>
+     <h1><?php echo htmlspecialchars($title) ?></h1>
+     <video src="<?php echo htmlspecialchars("http://$host$media/$clip") ?>" width="640" height="390" class="mejs-player" data-mejsoptions='{"alwaysShowControls": true}'></video>
      <br />
      <div style="max-width: 640px; height: 150px;">
        <div style="float: left; max-width: 420px; width: 100%; height: 100%;">
-         <pre style="text-align: left; height: 100%;"><?php echo $description ?></pre>
+         <pre style="text-align: left; height: 100%;"><?php echo htmlspecialchars($description) ?></pre>
        </div>
        <div style="float: left; margin-left: 20px; max-width: 200px; width: 100%;">
-         <pre><b>Views: <?php echo $views ?></b></pre>
-         <pre><b>Posted by: <a href="/user.php?username=<?php echo $username ?>"><?php echo $username ?></a></b></pre>
-         <b>Share&nbsp;</b><input type="text" name="share" value="<?php echo $shareURL ?>" disabled><br />
+         <pre><b>Views: <?php echo htmlspecialchars($views) ?></b></pre>
+         <pre><b>Posted by: <a href="/user.php?username=<?php echo htmlspecialchars($username) ?>"><?php echo htmlspecialchars($username) ?></a></b></pre>
+         <b>Share&nbsp;</b><input type="text" name="share" value="<?php echo htmlspecialchars($shareURL)sssss ?>" disabled><br />
        </div>
      </div>
      <script>
